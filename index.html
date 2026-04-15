@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card Task - HNG Stage 1</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <article data-testid="test-profile-card" aria-label="Oladokun Abdullateef profile card">
+
+    <div class="top-section">
+
+      <!-- user photo -->
+      <figure class="avatar-area">
+        <img
+          src="image/Himax.jpg"
+          alt="My Pic"
+          data-testid="test-user-avatar"
+          width="145"
+          height="168"
+        />
+        <!-- screen readers get this -->
+        <figcaption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">
+          Photo of Oladokun Abdullateef 
+        </figcaption>
+      </figure>
+
+      <div class="user-details">
+        <header>
+          <h1 data-testid="test-user-name">Oladokun Abdullateef</h1>
+        </header>
+
+        <p class="bio" data-testid="test-user-bio">
+          Naija-based Frontend Developer 🇳🇬. I turn caffeine into clean code and big ideas into interactive web experiences. Whether it's tweaking CSS animations or optimizing state management, I love bringing the web to life.
+
+        </p>
+
+        <!-- epoch time -->
+        <div class="current-time-box">
+          <p class="time-title" aria-hidden="true">
+            <span class="dot"></span>
+            Current Time
+          </p>
+          <time
+            data-testid="test-user-time"
+            id="ms-clock"
+            aria-live="polite"
+            aria-label="Current time in milliseconds since epoch"
+          >loading...</time>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sep" role="separator" aria-hidden="true"></div>
+
+    <!-- social links -->
+       <div class="bottom-lists">
+      
+      <section class="list-box" aria-labelledby="hobbies-title">
+      <p class="section-heading" aria-hidden="true">Social Links</p>
+      <nav aria-label="Social links">
+        <ul data-testid="test-user-social-links">
+          <li>
+            <a
+              href="https://github.com/doxxie500"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="test-user-social-github"
+              aria-label="GitHub profile, opens in new tab"
+            >GitHub</a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/kalabaxng"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="test-user-social-twitter"
+              aria-label="Twitter profile, opens in new tab"
+            >Twitter</a>
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="test-user-social-linkedin"
+              aria-label="LinkedIn profile, opens in new tab"
+            >LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sep" role="separator" aria-hidden="true"></div>
+
+    <!-- hobbies and dislikes -->
+    <div class="bottom-lists">
+
+      <section class="list-box" aria-labelledby="hobbies-title">
+        <h2 id="hobbies-title">Hobbies</h2>
+        <ul data-testid="test-user-hobbies">
+          <li>UI / UX design</li>
+          <li>Open source stuff</li>
+          <li>Reading tech blogs</li>
+          <li>Photography</li>
+          <li>Chess</li>
+        </ul>
+      </section>
+
+      <section class="list-box" aria-labelledby="dislikes-title">
+        <h2 id="dislikes-title">Dislikes</h2>
+        <ul data-testid="test-user-dislikes">
+          <li>Messy code with no comments</li>
+          <li>Meetings that drag</li>
+          <li>Slow internet</li>
+          <li>Bad documentation</li>
+          <li>Feature creep</li>
+        </ul>
+      </section>
+
+    </div>
+
+  </article>
+
+  <script>var clockEl = document.getElementById('ms-clock');
+
+function updateTime() {
+var now = Date.now();
+clockEl.textContent = now;
+clockEl.setAttribute('datetime', new Date(now).toISOString());
+}
+
+updateTime();
+setInterval(updateTime, 1000);</script>
+    
+
+
+</body>
+</html>
